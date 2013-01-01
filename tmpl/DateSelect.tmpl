@@ -1,0 +1,53 @@
+<script id="tmpl-DateSelect" type="text/html">
+	<div class="DateSelect">
+		<div class="DateSelect-main">
+			<div class="navbuts">
+				<div class="navbut left" data-action="prev"><div class="ico ico-arrow-l"></div></div>
+				<div class="navbut right" data-action="next"><div class="ico ico-arrow-r"></div></div>
+			</div>
+			<div class="DateSelect-content">
+				
+			</div>
+			<div class="DateSelect-buttons">
+				<div class="button close">Close</div>
+			</div>
+		</div>
+	</div>
+</script>
+<script id="tmpl-DateSelect-calendar" type="text/html">
+	<div class="DateSelect-calendar">
+		<div class="title">
+			${monthLabel} ${year}
+		</div>
+		<table class="DateSelect-calendar-table">
+			<thead>
+				<tr class="calendar-week">
+					<th data-value="0">S</th>
+					<th data-value="1">M</th>
+					<th data-value="2">T</th>
+					<th data-value="3">W</th>
+					<th data-value="4">T</th>
+					<th data-value="5">F</th>
+					<th data-value="6">S</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{each(week_index,week) weeks}}
+					<tr >
+						{{each(date_index,date) week}}
+							{{if date}}
+								<td class="calendar-date {{if brite.ex.formatDate(date) == brite.ex.formatDate(new Date())}}today{{/if}}" data-value="${brite.ex.formatDate(date)}">
+									${date.getDate()}
+								</td>
+							{{else}}
+								<td>
+									&nbsp;
+								</td>
+							{{/if}}
+						{{/each}}
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</script>
