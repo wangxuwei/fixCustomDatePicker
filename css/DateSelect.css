@@ -9,8 +9,6 @@
 	font-family:Arial;
 	-webkit-box-shadow:2px 3px 6px #757575;
 	z-index:8;
-	width:200px;
-	height:200px;
 }
 .DateSelect .DateSelect-main{
 	position:relative;

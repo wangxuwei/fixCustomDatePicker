@@ -15,11 +15,13 @@
   </head>
 
   <body>
-  	<div id="holder"></div>
+  	<button id="holder" class="btn">click me</button>
   	<script>
   		$(function(){
   			var $holder = $("#holder");
-  			brite.display("DateSelect",{$target:$holder});
+  			$holder.on("click",function(){
+	  			brite.display("DateSelect",{$target:$holder});
+  			});
   		});
   	</script>
   </body>
